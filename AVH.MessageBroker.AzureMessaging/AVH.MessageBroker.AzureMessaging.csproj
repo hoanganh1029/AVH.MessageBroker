@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-AzureMessaging-fe2cff39-4625-48ab-abda-318d9d5f766a</UserSecretsId>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Using Remove="Microsoft.Extensions.Hosting"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AVH.MessageBroker.Common\AVH.MessageBroker.Common.csproj" />
+    <ProjectReference Include="..\AVH.MessageBroker.Framework\AVH.MessageBroker.Framework.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.MessageBroker.AzureMessaging", "AVH.MessageBroker.AzureMessaging\AVH.MessageBroker.AzureMessaging.csproj", "{A572BC17-61A0-4053-A267-674502CB3CA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.MessageBroker.Models", "AVH.MessageBroker.Models\AVH.MessageBroker.Models.csproj", "{4352DCEE-3DA1-41F7-8193-5776EC9DF13B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.MessageBroker.Sender", "AVH.MessageBroker.Sender\AVH.MessageBroker.Sender.csproj", "{379F474B-E877-4317-A003-60DAE2202E62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.MessageBroker.Worker", "AVH.MessageBroker.Worker\AVH.MessageBroker.Worker.csproj", "{61F4B9C2-DA6C-4179-82AC-B14849913317}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.MessageBroker.Common", "AVH.MessageBroker.Common\AVH.MessageBroker.Common.csproj", "{C506096E-6E81-4FFF-87E6-2E03B6A2F311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVH.MessageBroker.Services", "AVH.MessageBroker.Services\AVH.MessageBroker.Services.csproj", "{8DA864CF-E905-4DC4-886B-B949AE2A4BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVH.MessageBroker.Framework", "AVH.MessageBroker.Framework\AVH.MessageBroker.Framework.csproj", "{89BF374F-1524-44E9-869B-9084B1900B6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{427A644B-2CDD-4743-8F71-4AAE47A9A446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A572BC17-61A0-4053-A267-674502CB3CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A572BC17-61A0-4053-A267-674502CB3CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A572BC17-61A0-4053-A267-674502CB3CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A572BC17-61A0-4053-A267-674502CB3CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4352DCEE-3DA1-41F7-8193-5776EC9DF13B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4352DCEE-3DA1-41F7-8193-5776EC9DF13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4352DCEE-3DA1-41F7-8193-5776EC9DF13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4352DCEE-3DA1-41F7-8193-5776EC9DF13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379F474B-E877-4317-A003-60DAE2202E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379F474B-E877-4317-A003-60DAE2202E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379F474B-E877-4317-A003-60DAE2202E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379F474B-E877-4317-A003-60DAE2202E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F4B9C2-DA6C-4179-82AC-B14849913317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F4B9C2-DA6C-4179-82AC-B14849913317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F4B9C2-DA6C-4179-82AC-B14849913317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F4B9C2-DA6C-4179-82AC-B14849913317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C506096E-6E81-4FFF-87E6-2E03B6A2F311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C506096E-6E81-4FFF-87E6-2E03B6A2F311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C506096E-6E81-4FFF-87E6-2E03B6A2F311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C506096E-6E81-4FFF-87E6-2E03B6A2F311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA864CF-E905-4DC4-886B-B949AE2A4BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA864CF-E905-4DC4-886B-B949AE2A4BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA864CF-E905-4DC4-886B-B949AE2A4BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA864CF-E905-4DC4-886B-B949AE2A4BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BF374F-1524-44E9-869B-9084B1900B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BF374F-1524-44E9-869B-9084B1900B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BF374F-1524-44E9-869B-9084B1900B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BF374F-1524-44E9-869B-9084B1900B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{379F474B-E877-4317-A003-60DAE2202E62} = {427A644B-2CDD-4743-8F71-4AAE47A9A446}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E876D934-5DC2-41DB-9FD8-AD7B2CFB153C}
+	EndGlobalSection
+EndGlobal

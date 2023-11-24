@@ -1,0 +1,10 @@
+.vs/
+**/node_modules
+**/package-lock.json
+**/bin
+**/obj
+**/*.user
+*.user
+**/project.lock.json
+**/webpack-cache
+/AVH.MessageBroker.AzureMessaging/appsettings.Development.json

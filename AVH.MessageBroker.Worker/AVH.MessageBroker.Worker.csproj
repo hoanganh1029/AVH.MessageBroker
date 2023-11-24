@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>510cd5e9-9edf-4064-9de1-543ecde0ce6e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SchedulerWorkers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AVH.MessageBroker.AzureMessaging\AVH.MessageBroker.AzureMessaging.csproj" />
+    <ProjectReference Include="..\AVH.MessageBroker.Models\AVH.MessageBroker.Models.csproj" />
+    <ProjectReference Include="..\AVH.MessageBroker.Services\AVH.MessageBroker.Services.csproj" />
+  </ItemGroup>
+</Project>
