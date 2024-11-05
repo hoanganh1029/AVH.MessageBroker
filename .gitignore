@@ -7,4 +7,4 @@
 *.user
 **/project.lock.json
 **/webpack-cache
-/AVH.MessageBroker.AzureMessaging/appsettings.Development.json
+**/appsettings.Development.json
