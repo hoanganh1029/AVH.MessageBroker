@@ -21,9 +21,9 @@ namespace AVH.MessageBroker.AzureMessaging.QueueServices.SenderReceiver
 
         public SenderReceiverQueueService(
             string queueName,
-            IServiceBusClientFactory serviceBusClientFactory,
+            ServiceBusClient serviceBusClient,
             ILogger<SenderReceiverQueueService<T>> logger)
-            : base(queueName, serviceBusClientFactory)
+            : base(queueName, serviceBusClient)
         {
             _logger = logger;
             _sender = _serviceBusClient.CreateSender(_queueName);

@@ -11,10 +11,10 @@ namespace AVH.MessageBroker.AzureMessaging.QueueServices
 
         public ServiceBusQueueServiceBase(
             string queueName,
-            IServiceBusClientFactory serviceBusClientFactory)
+            ServiceBusClient serviceBusClient)
         {
             _queueName = queueName;
-            _serviceBusClient = serviceBusClientFactory.Build(queueName).GetAwaiter().GetResult();
+            _serviceBusClient = serviceBusClient;
         }
     }
 }

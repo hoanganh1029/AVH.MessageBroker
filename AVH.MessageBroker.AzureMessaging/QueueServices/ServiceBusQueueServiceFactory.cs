@@ -27,14 +27,16 @@ namespace AVH.MessageBroker.AzureMessaging.QueueServices
         {
             var logger = _loggerFactory.CreateLogger<SenderReceiverQueueService<T>>();
             var fullQueueName = $"{_queuePrefix}-{queueName}";
-            return new SenderReceiverQueueService<T>(fullQueueName, _serviceBusClientFactory, logger);
+            var serviceBusClient = _serviceBusClientFactory.Build(queueName).GetAwaiter().GetResult();
+            return new SenderReceiverQueueService<T>(fullQueueName, serviceBusClient, logger);
         }
 
         public ProcessorQueueService<T> CreateProcessorQueueService<T>(string queueName) where T : class
         {
             var logger = _loggerFactory.CreateLogger<ProcessorQueueService<T>>();
             var fullQueueName = $"{_queuePrefix}-{queueName}";
-            return new ProcessorQueueService<T>(fullQueueName, _serviceBusClientFactory, logger);
+            var serviceBusClient = _serviceBusClientFactory.Build(queueName).GetAwaiter().GetResult();
+            return new ProcessorQueueService<T>(fullQueueName, serviceBusClient, logger);
         }
     }
 }

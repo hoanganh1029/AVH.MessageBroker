@@ -10,9 +10,9 @@ namespace AVH.MessageBroker.AzureMessaging.QueueServices.Processor
 
         public ProcessorQueueService(
             string queueName,
-            IServiceBusClientFactory serviceBusClientFactory,
+            ServiceBusClient serviceBusClient,
             ILogger<ProcessorQueueService<T>> logger)
-            : base(queueName, serviceBusClientFactory)
+            : base(queueName, serviceBusClient)
         {
             _logger = logger;
         }
