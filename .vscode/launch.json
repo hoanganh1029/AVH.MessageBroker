@@ -2,20 +2,25 @@
    "version": "0.2.0",
    "configurations": [
       {
+         // Use IntelliSense to find out which attributes exist for C# debugging
+         // Use hover for the description of the existing attributes
+         // For further information visit https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md
          "name": ".NET Core Launch (console)",
          "type": "coreclr",
          "request": "launch",
          "preLaunchTask": "build",
-         "program": "${workspaceFolder}/AVH.MessageBroker.AzureMessaging/bin/Debug/net6.0/AVH.MessageBroker.AzureMessaging.dll",
+         // If you have changed target frameworks, make sure to update the program path.
+         "program": "${workspaceFolder}/AVH.MessageBroker.Worker/bin/Debug/net8.0/AVH.MessageBroker.Worker.dll",
          "args": [],
-         "cwd": "${workspaceFolder}/AVH.MessageBroker.AzureMessaging",
+         "cwd": "${workspaceFolder}/AVH.MessageBroker.Worker",
+         // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
          "console": "internalConsole",
          "stopAtEntry": false
       },
       {
-         "name": ".NET Core Attach",
-         "type": "coreclr",
-         "request": "attach"
+        "name": ".NET Core Attach",
+        "type": "coreclr",
+        "request": "attach"
       },
       {
          "name": "Docker .NET Launch",
@@ -25,6 +30,6 @@
          "netCore": {
             "appProject": "${workspaceFolder}/AVH.MessageBroker.Worker/AVH.MessageBroker.Worker.csproj"
          }
-      }
+      }      
    ]
 }
