@@ -2,40 +2,100 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "build",
-         "command": "dotnet",
-         "type": "process",
-         "args": [
-            "build",
-            "${workspaceFolder}/AVH.MessageBroker.AzureMessaging/AVH.MessageBroker.AzureMessaging.csproj",
-            "/property:GenerateFullPaths=true",
-            "/consoleloggerparameters:NoSummary"
-         ],
-         "problemMatcher": "$msCompile"
+        "label": "build",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+          "build",
+          "${workspaceFolder}/AVH.MessageBroker.sln",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary;ForceNoAlign"
+        ],
+        "problemMatcher": "$msCompile"
       },
       {
-         "label": "publish",
-         "command": "dotnet",
-         "type": "process",
-         "args": [
-            "publish",
-            "${workspaceFolder}/AVH.MessageBroker.AzureMessaging/AVH.MessageBroker.AzureMessaging.csproj",
-            "/property:GenerateFullPaths=true",
-            "/consoleloggerparameters:NoSummary"
-         ],
-         "problemMatcher": "$msCompile"
+        "label": "publish",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+          "publish",
+          "${workspaceFolder}/AVH.MessageBroker.sln",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary;ForceNoAlign"
+        ],
+        "problemMatcher": "$msCompile"
       },
       {
-         "label": "watch",
-         "command": "dotnet",
-         "type": "process",
-         "args": [
-            "watch",
-            "run",
-            "--project",
-            "${workspaceFolder}/AVH.MessageBroker.AzureMessaging/AVH.MessageBroker.AzureMessaging.csproj"
+        "label": "watch",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+          "watch",
+          "run",
+          "--project",
+          "${workspaceFolder}/AVH.MessageBroker.sln"
+        ],
+        "problemMatcher": "$msCompile"
+      },
+      {
+         "type": "docker-build",
+         "label": "docker-build: debug",
+         "dependsOn": [
+            "build"
          ],
-         "problemMatcher": "$msCompile"
+         "dockerBuild": {
+            "tag": "avhmessagebrokerworker:dev",
+            "target": "base",
+            "dockerfile": "${workspaceFolder}/AVH.MessageBroker.Worker/Dockerfile",
+            "context": "${workspaceFolder}",
+            "pull": true
+         },
+         "netCore": {
+            "appProject": "${workspaceFolder}/AVH.MessageBroker.Worker/AVH.MessageBroker.Worker.csproj"
+         }
+      },
+      {
+         "type": "docker-build",
+         "label": "docker-build: release",
+         "dependsOn": [
+            "build"
+         ],
+         "dockerBuild": {
+            "tag": "avhmessagebrokerworker:latest",
+            "dockerfile": "${workspaceFolder}/AVH.MessageBroker.Worker/Dockerfile",
+            "context": "${workspaceFolder}",
+            "platform": {
+               "os": "linux",
+               "architecture": "amd64"
+            },
+            "pull": true
+         },
+         "netCore": {
+            "appProject": "${workspaceFolder}/AVH.MessageBroker.Worker/AVH.MessageBroker.Worker.csproj"
+         }
+      },
+      {
+         "type": "docker-run",
+         "label": "docker-run: debug",
+         "dependsOn": [
+            "docker-build: debug"
+         ],
+         "dockerRun": {},
+         "netCore": {
+            "appProject": "${workspaceFolder}/AVH.MessageBroker.Worker/AVH.MessageBroker.Worker.csproj",
+            "enableDebugging": true
+         }
+      },
+      {
+         "type": "docker-run",
+         "label": "docker-run: release",
+         "dependsOn": [
+            "docker-build: release"
+         ],
+         "dockerRun": {},
+         "netCore": {
+            "appProject": "${workspaceFolder}/AVH.MessageBroker.Worker/AVH.MessageBroker.Worker.csproj"
+         }
       }
    ]
 }

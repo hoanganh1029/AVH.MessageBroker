@@ -21,6 +21,11 @@
 - **AVH.MessageBroker.Sender**: Use to send messages to queue.
 - **AVH.MessageBroker.Worker**: Use to handle message by creating handler then executing the command message.
 
-### Configuration
+### Usage
 - Send message to queue by using Sender-Receiver: Update properties in *AzureServiceOption* including *ConnectionString*, *QueuePrefix*, *Queues.Name* in [appsettings.json](AVH.MessageBroker.Sender/appsettings.json) in **AVH.MessageBroker.Sender**
+
 - Handle messages from queue by Processor: Update properties in *AzureServiceOption* including *ConnectionString*, *QueuePrefix*, *Queues.Name* in [appsettings.json](AVH.MessageBroker.Worker/appsettings.json) in **AVH.MessageBroker.Worker**
+
+### License
+This project is licensed under the MIT License. See the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) file for details.
+

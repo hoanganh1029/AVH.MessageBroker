@@ -6,6 +6,7 @@ using AVH.MessageBroker.Models.Commands;
 using AVH.MessageBroker.Services.Handlers;
 using AVH.MessageBroker.Services.Handlers.Export;
 using AVH.MessageBroker.Worker.BackgroundWorkers;
+using Quartz;
 using System.Reflection;
 
 IHost host = Host.CreateDefaultBuilder(args)
@@ -22,6 +23,11 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddSingleton<ICommandHandler<ExportPdfCommand>, ExportPdfHandler>();
 
         services.AddHostedService<GeneralCommandWorker>();
+
+        //Quartz
+        services.AddQuartz();
+        services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
+        services.AddHostedService<SchedulerWorker>();
     })
     .ConfigureAppConfiguration((hostContext, configBuilder) =>
     {
